@@ -1,18 +1,22 @@
 # Instrucciones
 
-Se pide diseñar los siguientes formularios: 
+Se pide diseñar los siguientes formularios:
+ 
 
-#### 1
+## 1
 
-<p align="center">
-<img title="" src="https://github.com/user-attachments/assets/2393646d-a30a-4cbc-8b83-b3fd5fe6b695" alt="" data-align="center" style="zoom:67%;">
-</p>
+<div align="center">
+ <img title="" src="https://github.com/user-attachments/assets/9207f356-b36f-4587-a908-ef584387c5a5" alt="" width="542">
+</div>
 
-#### 2
+> NOTA: Para conseguir un borde sólo en la parte inferior de un control, mirar el método `BorderFactory.createMatteBorder`)
 
-<p align="center">
-<img title="" src="https://github.com/user-attachments/assets/a42547f0-d02c-49c1-a3fa-56c89345f232" alt="" data-align="center" style="zoom:67%;">
-</p>
+## 2
+
+<div align="center">
+ <img title="" src="https://github.com/user-attachments/assets/4e3720dc-12d9-4e3a-8a50-1355d47908f5" alt="" width="542">
+</div>
+
+> Pista: En ambos formularios los controles son **paneles**
 
 
-> NOTA: En este segundo caso, cada asignatura es un JLabel cuyo texto es HTML (hay que indicar <html>código</html>)
