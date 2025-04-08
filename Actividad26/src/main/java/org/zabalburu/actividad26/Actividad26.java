@@ -5,6 +5,7 @@
 package org.zabalburu.actividad26;
 
 import org.zabalburu.actividad26.views.FrmVentana1;
+import org.zabalburu.actividad26.views.FrmVentana2;
 
 /**
  *
@@ -14,5 +15,6 @@ public class Actividad26 {
 
     public static void main(String[] args) {
         new FrmVentana1().setVisible(true);
+        new FrmVentana2().setVisible(true);
     }
 }
