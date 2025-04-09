@@ -26,7 +26,7 @@ import javax.swing.JTextField;
 public class FrmVentana1 extends JFrame {
     private Dimension dmVentana = new Dimension(680, 700);
     
-    private JLabel lblTitulo = new JLabel("ACTUALIZA tu Perfil");
+    private JLabel lblTitulo = new JLabel("Actualiza tu Perfil");
     private JLabel lblNombre = new JLabel("Nombre completo");
     private JLabel lblCorreo = new JLabel("Correo electrónico");
     private JLabel lblTelefono = new JLabel("Teléfono");

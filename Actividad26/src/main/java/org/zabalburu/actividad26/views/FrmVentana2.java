@@ -39,68 +39,73 @@ public class FrmVentana2 extends JFrame {
     private JButton btnRegistro = new JButton("REGISTRARSE");
     private JButton btnCancelar = new JButton("CANCELAR");
     
+    private JPanel pnlTitulo = new JPanel(new FlowLayout (FlowLayout.CENTER));
     private JPanel pnlDatos = new JPanel(new GridLayout(0, 1));
-    private JPanel pnlBotones = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+    private JPanel pnlBotones = new JPanel(new FlowLayout(FlowLayout.CENTER));
     
     private final Color COLOR_FONDO = new Color(25, 25, 35);
-    private final Color COLOR_FONDO_TITULO = new Color(41,127,184);
+    private final Color COLOR_FONDO_TITULO = new Color(49,50,70);
     private final Color COLOR_TEXTO = new Color(2, 253,171);
-    private final Font FUENTE = new Font("Calibri", Font.PLAIN, 13);
+    private final Color COLOR_CANCELAR = new Color(255, 49, 80);
+    private final Font FUENTE = new Font("Calibri", Font.BOLD, 16);
     
     public FrmVentana2() {
         this.setSize(dmVentana);
-        this.setTitle("GameZOne - Registro");
-        lblTitulo.setFont(new Font("Calibri", Font.BOLD, 24));
-        lblTitulo.setHorizontalAlignment(JLabel.LEFT);
+        this.setTitle("GameZone - Registro");
+        lblTitulo.setFont(new Font("Impact", Font.BOLD, 32));
+        lblTitulo.setHorizontalAlignment(JLabel.CENTER);
         lblTitulo.setForeground(COLOR_TEXTO);
         lblTitulo.setBackground(COLOR_FONDO_TITULO);
         lblTitulo.setOpaque(true);
-        lblTitulo.setBorder(BorderFactory.createEmptyBorder(20,20,10,0));
+        lblTitulo.setBorder(BorderFactory.createCompoundBorder(
+                                BorderFactory.createMatteBorder(0, 0, 2, 0, COLOR_TEXTO), 
+                                BorderFactory.createEmptyBorder(5, 10, 5, 10)
+                            ));
         this.add(lblTitulo, BorderLayout.NORTH);
         
-        pnlDatos.add(lblNombre);
-        pnlDatos.add(txtNombre);
-        pnlDatos.add(lblCorreo);
-        pnlDatos.add(txtCorreo);
-        pnlDatos.add(lblTelefono);
-        pnlDatos.add(txtTelefono);
-        pnlDatos.add(lblDireccion);
-        pnlDatos.add(txtDireccion);
-        pnlDatos.add(lblSitioWeb);
-        pnlDatos.add(txtSitioWeb);
+        pnlDatos.add(lblTag);
+        pnlDatos.add(txtTag);
+        pnlDatos.add(lblMail);
+        pnlDatos.add(txtMail);
+        pnlDatos.add(lblPassword);
+        pnlDatos.add(pswPassword);
         pnlDatos.setBorder(BorderFactory.createEmptyBorder(10, 30, 10, 30));
         pnlDatos.setBackground(COLOR_FONDO);
         for (int i = 0; i < pnlDatos.getComponentCount(); i++) {
             Component cmp = pnlDatos.getComponent(i);
-            if (cmp instanceof JTextField) {
+            if (cmp instanceof JTextField || cmp instanceof JPasswordField) {
+                ((JTextField)cmp).setBorder(BorderFactory.createLineBorder(COLOR_TEXTO, 1));
                 cmp.setFont(FUENTE);
-                ((JTextField) cmp).setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, COLOR_FONDO_AZUL));
+                cmp.setForeground(Color.LIGHT_GRAY);
+                cmp.setBackground(COLOR_FONDO_TITULO);
             } else {
-                cmp.setFont(FUENTE.deriveFont(Font.BOLD));
+                cmp.setFont(FUENTE);
+                cmp.setForeground(COLOR_TEXTO);
             }
         }
         this.add(pnlDatos, BorderLayout.CENTER);
         
+        pnlBotones.add(btnRegistro);
         pnlBotones.add(btnCancelar);
-        pnlBotones.add(btnGuardar);
-        btnCancelar.setBackground(new Color(190, 195, 199));
-        btnGuardar.setBackground(COLOR_FONDO_AZUL);
-        btnGuardar.setBorder(BorderFactory.createLineBorder(COLOR_FONDO_AZUL, 5));
-        btnCancelar.setBorder(BorderFactory.createLineBorder(new Color(190, 195, 199), 5));
-        btnGuardar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        btnCancelar.setBackground(COLOR_CANCELAR);
+        btnRegistro.setBackground(COLOR_TEXTO);
+        /*btnRegistro.setBorder(BorderFactory.createLineBorder(COLOR_TEXTO, 15));
+        btnCancelar.setBorder(BorderFactory.createLineBorder(COLOR_CANCELAR.darker(), 15));
+        btnCancelar.setBorderPainted(true);
+        btnRegistro.setBorderPainted(true);*/
+        btnRegistro.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         btnCancelar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         pnlBotones.setBackground(COLOR_FONDO);
         pnlBotones.setBorder(BorderFactory.createEmptyBorder(20, 30, 20, 30));
         for (int i = 0; i < pnlBotones.getComponentCount(); i++) {
-            pnlBotones.setFont(FUENTE.deriveFont(Font.BOLD));
-            pnlBotones.getComponent(i).setForeground(Color.WHITE);
+            pnlBotones.getComponent(i).setForeground(COLOR_FONDO);
             pnlBotones.setCursor(new Cursor(Cursor.HAND_CURSOR));
         }
         this.add(pnlBotones, BorderLayout.SOUTH);
         
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
-        this.getRootPane().setDefaultButton(btnGuardar);
+        this.getRootPane().setDefaultButton(btnRegistro);
     }
     
     public static void main(String[] args) {
